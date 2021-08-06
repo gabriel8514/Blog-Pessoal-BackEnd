@@ -28,7 +28,7 @@ public class Postagem {
 	@Size(min = 5, max = 100)
 	private String titulo; 
 	
-	@NotNull
+	@NotNull (message = "O Atributo mensagem é obrigatório")
 	@Size(min = 10, max = 500)
 	private String texto; 
 	

@@ -23,7 +23,7 @@ import br.org.generation.blogPessoal.repository.PostagemRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	
-	//inveja os serviços. 
+	//injeta os serviços. 
 	@Autowired
 	private PostagemRepository repository;
 	
