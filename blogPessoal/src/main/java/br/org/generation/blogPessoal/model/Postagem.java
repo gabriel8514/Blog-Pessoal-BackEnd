@@ -40,6 +40,9 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem") // faz com que não entre me loop. 
 	private Tema tema;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem") // faz com que não entre me loop. 
+	private UsuarioModel usuario; 
 
 	public long getId() {
 		return id;
