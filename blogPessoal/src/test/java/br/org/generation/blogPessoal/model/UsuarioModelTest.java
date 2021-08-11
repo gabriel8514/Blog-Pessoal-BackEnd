@@ -1,4 +1,4 @@
-package org.generation.blogPessoal.model;
+package br.org.generation.blogPessoal.model;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import br.org.generation.blogPessoal.model.UsuarioModel;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class UsuarioModelTest {

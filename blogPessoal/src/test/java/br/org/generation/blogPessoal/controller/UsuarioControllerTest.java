@@ -1,4 +1,4 @@
-package org.generation.blogPessoal.controller;
+package br.org.generation.blogPessoal.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -50,7 +50,7 @@ public class UsuarioControllerTest {
 		if(!usuarioRepository.findByUsuario(usuarioAdmin.getUsuario()).isPresent()) {
 
             HttpEntity<UsuarioModel> request = new HttpEntity<UsuarioModel>(usuarioAdmin);
-			testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, UsuarioModel.class);
+			testRestTemplate.exchange("/usuario/cadastrar", HttpMethod.POST, request, UsuarioModel.class);
 			
 		}
 		
@@ -69,7 +69,7 @@ public class UsuarioControllerTest {
 		HttpEntity<UsuarioModel> request = new HttpEntity<UsuarioModel>(usuario);
 
 		ResponseEntity<UsuarioModel> resposta = testRestTemplate
-				.exchange("/usuarios/cadastrar", HttpMethod.POST, request, UsuarioModel.class);
+				.exchange("/usuario/cadastrar", HttpMethod.POST, request, UsuarioModel.class);
 		
 		assertEquals(HttpStatus.CREATED, resposta.getStatusCode());
 
@@ -81,7 +81,7 @@ public class UsuarioControllerTest {
 	public void deveMostrarTodosUsuarios() {
 		
 		ResponseEntity<String> resposta = testRestTemplate.withBasicAuth("admin@email.com.br", "admin123")
-				.exchange("/usuarios/all", HttpMethod.GET, null, String.class);
+				.exchange("/usuario/all", HttpMethod.GET, null, String.class);
 		
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
@@ -94,7 +94,7 @@ public class UsuarioControllerTest {
 		HttpEntity<UsuarioModel> request = new HttpEntity<UsuarioModel>(usuarioUpdate);
 
 		ResponseEntity<UsuarioModel> resposta = testRestTemplate.withBasicAuth("admin@email.com.br", "admin123")
-				.exchange("/usuarios/alterar", HttpMethod.PUT, request, UsuarioModel.class);
+				.exchange("/usuario/alterar", HttpMethod.PUT, request, UsuarioModel.class);
 		
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());	
 	}	
