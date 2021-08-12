@@ -18,6 +18,8 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table (name = "tb_usuario")
 public class UsuarioModel {
@@ -31,8 +33,8 @@ public class UsuarioModel {
 	private String nome; 
 	
 	@NotNull
-	@Size(min =2, max = 100)
 	@Email
+	@ApiModelProperty(example = "email@email.com")
 	private String usuario; 
 	
 	@NotNull

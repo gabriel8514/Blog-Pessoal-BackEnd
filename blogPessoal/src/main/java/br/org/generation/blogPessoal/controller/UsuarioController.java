@@ -41,7 +41,7 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()); 
 	}
 	
-	@PostMapping("/cadastrar")
+	/*@PostMapping("/cadastrar")
     public ResponseEntity<Optional<UsuarioModel>> Post(@RequestBody UsuarioModel usuario) {
 
         Optional<UsuarioModel> usuarioResp = usuarioService.CadastrarUsuario(usuario);
@@ -51,7 +51,13 @@ public class UsuarioController {
             return ResponseEntity.badRequest().build();
         	        	
         }
-    }
+    } */
+	
+	@PostMapping("/cadastrar")
+	public ResponseEntity<UsuarioModel> postUsuario(@RequestBody UsuarioModel usuario) {
+			return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+	}
+
 	
 	@PutMapping("/alterar")
 	public ResponseEntity<UsuarioModel> put (@RequestBody UsuarioModel usuario){
